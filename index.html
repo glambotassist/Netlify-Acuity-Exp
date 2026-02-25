@@ -10,15 +10,22 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow-x: hidden;
             background-color: #000000;
         }
         body > iframe {
             display: block;
-            margin: 0;
-            padding: 0;
+            width: 100%;
             border: none;
             background-color: #000000;
+        }
+        #VG_OVERLAY_CONTAINER {
+            position: fixed !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            width: 500px !important;
+            height: 500px !important;
+            z-index: 999999 !important;
+            pointer-events: auto !important;
         }
     </style>
 </head>
@@ -27,18 +34,15 @@
     <iframe 
         src="https://app.acuityscheduling.com/schedule.php?owner=36538148&ref=embedded_csp" 
         title="Schedule Appointment" 
-        width="1280" 
+        width="100%" 
         height="2550" 
         frameBorder="0" 
-        allow="payment"
-        style="border: none; display: block; margin: 0 auto;">
+        allow="payment">
     </iframe>
     <script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script>
 
     <!-- Chatbot Widget -->
-    <div style="width: 500px; height: 500px; position: fixed; bottom: 20px; right: 20px; z-index: 9999;" id="VG_OVERLAY_CONTAINER">
-        <!-- Here is where CONVOCORE renders the widget. -->
-    </div>
+    <div id="VG_OVERLAY_CONTAINER"></div>
 
     <script defer>
         (function() {
